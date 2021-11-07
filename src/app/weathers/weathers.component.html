@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-md-12" *ngIf="clicked">
+    <div class="card mb-3" style="width: 18rem">
+      <div class="card-body" *ngFor="let weather of weathers; let i = index">
+        <h5 class="card-title">
+          {{ weather.name }}
+          <img
+            src="http://openweathermap.org/img/wn/{{
+              weather.weather[0].icon
+            }}.png"
+            alt="{{ weather.weather[0].main }}"
+          />
+        </h5>
+        <h6 class="card-subtitle mb-2 text-muted">
+          Temperature: {{ weather.main.temp }}&#8451;
+        </h6>
+        <div class="card-text">
+          <p class="text-capitalize">
+            {{ weather.weather[0].description }}
+          </p>
+          Wind Speed: {{ weather.wind.speed }}km/s
+          <br />
+          Temp feels like: {{ weather.main.temp }}&#8451;
+          <br />
+          Humidity: {{ weather.main.humidity }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
