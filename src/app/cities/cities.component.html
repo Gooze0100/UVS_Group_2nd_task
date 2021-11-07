@@ -1,14 +1,15 @@
-<div class="row mt-3">
-  <div class="col-md-12 mb-3" *ngFor="let city of cities">
-    <div class="card" style="width: 18rem">
-      <div class="card-body" (click)="onClick(city.cityName)">
-        <h5 class="card-title d-inline">{{ city.cityName }}</h5>
-        <img
-          src="../../assets/img/{{ city.cityName }}.png"
-          class="card-img-top images float-end d-inline"
-          alt="{{ city.cityName }}"
-        />
-      </div>
-    </div>
+<div class="card my-2" *ngFor="let city of cities">
+  <div
+    class="card-body p-3 d-flex justify-content-between align-items-center"
+    (click)="onClick(city.cityName)"
+  >
+    <h5 class="card-title d-inline-block m-0">
+      {{ city.cityName }}
+    </h5>
+    <img
+      src="../../assets/img/{{ city.cityName }}.png"
+      class="card-img-top images d-inline-block float-end"
+      alt="{{ city.cityName }}"
+    />
   </div>
 </div>
